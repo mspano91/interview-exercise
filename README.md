@@ -19,11 +19,9 @@ These instructions will get your copy of the Fintech Portfolio Tracker up and ru
 First, clone the repository to your local machine:
 
 ```bash
-git clone https://your-repository-url.git
+git clone https://github.com/WavenureGit/interview-exercise.git
 cd fintech-portfolio-tracker
 ```
-
-Replace `https://your-repository-url.git` with the actual URL of your project repository.
 
 ### Setup the Application
 
