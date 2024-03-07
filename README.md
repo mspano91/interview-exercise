@@ -8,7 +8,7 @@ Before you begin, ensure you have installed all of the following prerequisites o
 
 - Docker and Docker Compose
 - Git (for cloning the repository)
-- Node.js and npm (if you plan to run the setup or application outside of Docker)
+- Node.js and yarn (if you plan to run the setup or application outside of Docker)
 
 ## Getting Started
 
