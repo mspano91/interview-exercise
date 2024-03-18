@@ -41,15 +41,6 @@ make up
 
 This command will start all the services defined in your `docker-compose.yml` file. The frontend should be accessible at `http://localhost:3000`, and the backend API at `http://localhost:4000`.
 
-### Development Mode
-
-If you want to run the application in development mode with live reload, use:
-
-```bash
-make up-dev
-```
-
-This command is particularly useful during the development phase, as it allows you to see changes in real-time without manually restarting the containers.
 
 ### Stopping the Application
 
