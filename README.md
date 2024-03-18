@@ -61,5 +61,5 @@ make down
 
 ## Using the Application
 
-After starting the application, navigate to `http://localhost:3000` in your browser to access the Fintech Portfolio Tracker frontend. From there, you can add, update, and track your investment portfolio.
+After starting the application, navigate to `http://localhost:3000` in your browser to access the Fintech Portfolio Tracker frontend and `http://localhost:4000` for the backend. From there, you can add, update, and track your investment portfolio.
 ```
