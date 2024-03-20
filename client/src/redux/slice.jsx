@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   allTickers: [],
   Allsearch: [],
+  selected: [],
 };
 export const fintechSlice = createSlice({
   name: "fintech",
@@ -14,10 +15,13 @@ export const fintechSlice = createSlice({
     setReset: (state, action) => {
       state.Allsearch = [];
     },
+    setSelected: (state, action) => {
+      state.selected = action.payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setAllTickers, setReset } = fintechSlice.actions;
+export const { setAllTickers, setReset, setSelected } = fintechSlice.actions;
 
 export default fintechSlice.reducer;

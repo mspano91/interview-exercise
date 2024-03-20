@@ -6,11 +6,16 @@ const {
 const tickerHandlerAll = async (req, res) => {
   try {
     const data = await tickerController();
-    const tickerList = data.map((tick) => ({
-      ticker: tick.ticker,
-      name: tick.name,
-      market: tick.market,
-      locale: tick.locale,
+    const tickerList = data.map((stock) => ({
+      name: stock.T,
+      // close: stock.c,
+      // higherP: stock.h,
+      // lowerP: stock.l,
+      // trans: stock.n,
+      // openP: stock.o,
+      // timestamp: stock.t,
+      // tradingV: stock.v,
+      // volWeighted: stock.vw,
     }));
     return res.status(200).json(tickerList);
   } catch (error) {
