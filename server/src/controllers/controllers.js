@@ -33,12 +33,3 @@ const byNameController = async (name) => {
 };
 
 module.exports = { tickerController, byNameController };
-
-// t: Este campo representa el timestamp (marca de tiempo) en formato UNIX, que indica cuándo se registró la información.
-// v: Es el volumen de operaciones asociado con el precio en ese momento.
-// o: El precio de apertura del par de divisas en el momento dado.
-// c: El precio de cierre del par de divisas en el momento dado.
-// h: El precio más alto alcanzado durante el intervalo de tiempo especificado.
-// l: El precio más bajo alcanzado durante el intervalo de tiempo especificado.
-// n: El número de operaciones realizadas durante el intervalo de tiempo especificado.
-//vw: Volumen ponderado por precio

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import Chart from "react-apexcharts";
 import { useSelector } from "react-redux";
+import BackgroundGradient from "../ui/background-gradient";
 
 export default function StockChart() {
   const selectedTickerRedux = useSelector((state) => state.fintech.selected);
@@ -55,13 +55,15 @@ export default function StockChart() {
 
   return (
     <div>
-      <Chart
-        options={getChartData().options}
-        series={getChartData().series}
-        type="line"
-        width={1000}
-        height={600}
-      />
+      <BackgroundGradient>
+        <Chart
+          options={getChartData().options}
+          series={getChartData().series}
+          type="line"
+          width={1200}
+          height={600}
+        />
+      </BackgroundGradient>
     </div>
   );
 }
