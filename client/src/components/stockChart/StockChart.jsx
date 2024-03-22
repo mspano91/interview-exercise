@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Chart from "react-apexcharts";
 import { useSelector } from "react-redux";
 import BackgroundGradient from "../ui/background-gradient";
 
 export default function StockChart() {
   const selectedTickerRedux = useSelector((state) => state.fintech.selected);
+  const selectedName = useSelector((state) => state.fintech.selectedName);
 
   const getChartData = () => {
     const labels = selectedTickerRedux.map((data) =>
@@ -54,16 +55,21 @@ export default function StockChart() {
   };
 
   return (
-    <div>
-      <BackgroundGradient>
-        <Chart
-          options={getChartData().options}
-          series={getChartData().series}
-          type="line"
-          width={1200}
-          height={600}
-        />
-      </BackgroundGradient>
-    </div>
+    <>
+      <div>
+        <BackgroundGradient>
+          <h1 className="font-medium text-5xl text-white p-6">
+            {selectedName}
+          </h1>
+          <Chart
+            options={getChartData().options}
+            series={getChartData().series}
+            type="line"
+            width={1200}
+            height={600}
+          />
+        </BackgroundGradient>
+      </div>
+    </>
   );
 }

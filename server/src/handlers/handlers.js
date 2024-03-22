@@ -8,14 +8,14 @@ const tickerHandlerAll = async (req, res) => {
     const data = await tickerController();
     const tickerList = data.map((stock) => ({
       name: stock.T,
-      // close: stock.c,
-      // higherP: stock.h,
-      // lowerP: stock.l,
-      // trans: stock.n,
-      // openP: stock.o,
-      // timestamp: stock.t,
-      // tradingV: stock.v,
-      // volWeighted: stock.vw,
+      close: stock.c,
+      openP: stock.o,
+      higherP: stock.h,
+      lowerP: stock.l,
+      trans: stock.n,
+      timestamp: stock.t,
+      tradingV: stock.v,
+      volWeighted: stock.vw,
     }));
     return res.status(200).json(tickerList);
   } catch (error) {
@@ -26,6 +26,7 @@ const tickerByName_Handler = async (req, res) => {
   const { n } = req.query;
   try {
     const data = await byNameController(n);
+    console.log(data);
 
     return res.status(200).json(data);
   } catch (error) {

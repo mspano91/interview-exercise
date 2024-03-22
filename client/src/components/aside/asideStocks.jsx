@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ticker_by_name } from "../../utils/fetchData";
 import { useEffect, useState } from "react";
-import { setSelected } from "../../redux/slice";
+import { setSelected, setSelectedName } from "../../redux/slice";
 import BackgroundGradient from "../ui/background-gradient";
 import InfoModal from "../modal/modal";
 import AddIcon from "@mui/icons-material/Add";
@@ -10,16 +10,18 @@ import AddIcon from "@mui/icons-material/Add";
 export default function AsideStocks() {
   const dispatch = useDispatch();
   const allTickerRedux = useSelector((state) => state.fintech.allTickers);
+  const stocksLimit = allTickerRedux.slice(0, 50);
   const selectedTickerRedux = useSelector((state) => state.fintech.selected);
 
-  const stocksLimit = allTickerRedux.slice(0, 50);
-
+  console.log(selectedTickerRedux);
   const handlerTicker_by_name = async (name) => {
-    console.log(name);
+    // console.log(name);
     try {
       const response = await ticker_by_name(name);
       console.log(response.data.results);
+      console.log(response.data.ticker);
       dispatch(setSelected(response.data.results));
+      dispatch(setSelectedName(response.data.ticker));
     } catch (error) {
       console.error("Error fetching data in Fetch client side:", error.message);
     }
@@ -34,7 +36,7 @@ export default function AsideStocks() {
 
   return (
     <BackgroundGradient className="rounded-[22px] max-w-sm  sm:p-4 bg-white dark:bg-zinc-900">
-      <div className="w-full h-[600px] flex flex-col p-2 text-white text-center overflow-y-auto scrollbar-none  ">
+      <div className="w-full h-[700px] flex flex-col p-2 text-white text-center overflow-y-auto scrollbar-none  ">
         {stocksLimit.map((tick) => (
           <div className="flexgap-2">
             <div className="flex flex-row items-center gap-2 rounded-md hover:bg-[#359EA4]">
@@ -48,7 +50,17 @@ export default function AsideStocks() {
                 {tick.name}
               </p>
               <div className="flex flex-row px-2">
-                <InfoModal></InfoModal>
+                <InfoModal
+                  stockName={tick.name}
+                  stockCloseP={tick.close}
+                  stockOpenP={tick.openP}
+                  stockHigherP={tick.higherP}
+                  stockLowerP={tick.lowerP}
+                  stockTrans={tick.trans}
+                  stockTimestamp={tick.timestamp}
+                  stockTradingV={tick.tradingV}
+                  stockVolWeighted={tick.volWeighted}
+                ></InfoModal>
                 <AddIcon className="cursor-pointer hover:text-slate-800" />
               </div>
             </div>

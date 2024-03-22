@@ -4,6 +4,7 @@ const initialState = {
   allTickers: [],
   Allsearch: [],
   selected: [],
+  selectedName: "",
 };
 export const fintechSlice = createSlice({
   name: "fintech",
@@ -18,10 +19,14 @@ export const fintechSlice = createSlice({
     setSelected: (state, action) => {
       state.selected = action.payload;
     },
+    setSelectedName: (state, action) => {
+      state.selectedName = action.payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setAllTickers, setReset, setSelected } = fintechSlice.actions;
+export const { setAllTickers, setReset, setSelected, setSelectedName } =
+  fintechSlice.actions;
 
 export default fintechSlice.reducer;

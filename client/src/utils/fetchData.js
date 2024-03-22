@@ -16,6 +16,7 @@ export const ticker_by_name = async (name) => {
     const data = await axios.get(
       `http://localhost:4000/ticker/byName/?n=${name}`
     );
+    console.log(data);
     return data;
   } catch (error) {
     console.log(error);
