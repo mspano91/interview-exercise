@@ -17,7 +17,7 @@ export default function Sections() {
           <p className=" text-center text-xl w-full font-medium ">Forex</p>
         </div>
       </div>
-      <div className=" pb-4 border justify-center flex flex-row "></div>
+      <div className=" pb-4 justify-center flex flex-row "></div>
     </>
   );
 }

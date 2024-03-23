@@ -32,4 +32,17 @@ const byNameController = async (name) => {
   }
 };
 
-module.exports = { tickerController, byNameController };
+const byDateController = async (name, range) => {
+  try {
+    const response = await axios.get(
+      `${URL_byName}${name}/range/1/day/${range}?adjusted=true&sort=asc&limit=120&apiKey=${API_KEY}`
+    );
+    console.log("PUTO", response);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    throw new Error("error fetching");
+  }
+};
+
+module.exports = { tickerController, byNameController, byDateController };
