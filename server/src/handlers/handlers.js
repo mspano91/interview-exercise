@@ -1,6 +1,7 @@
 const {
   tickerController,
   byNameController,
+  byDateController,
 } = require("../controllers/controllers");
 
 const tickerHandlerAll = async (req, res) => {
@@ -34,4 +35,17 @@ const tickerByName_Handler = async (req, res) => {
   }
 };
 
-module.exports = { tickerHandlerAll, tickerByName_Handler };
+const tickerByName_date = async (req, res) => {
+  const { n, range } = req.query;
+
+  console.log("HOLAAAAAAAAAAAAAAAAAAAA", n, range);
+  try {
+    const data = await byDateController(n, range);
+    console.log("HEEEEEEEY", data.results);
+    return res.status(200).json(data.results);
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
+
+module.exports = { tickerHandlerAll, tickerByName_Handler, tickerByName_date };

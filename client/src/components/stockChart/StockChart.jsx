@@ -2,6 +2,7 @@ import React from "react";
 import Chart from "react-apexcharts";
 import { useSelector } from "react-redux";
 import BackgroundGradient from "../ui/background-gradient";
+import DatePicker1 from "../DatePicker/DateRangePicker";
 
 export default function StockChart() {
   const selectedTickerRedux = useSelector((state) => state.fintech.selected);
@@ -57,6 +58,7 @@ export default function StockChart() {
   return (
     <>
       <div>
+        <DatePicker1 stock={selectedName} />;
         <BackgroundGradient>
           <h1 className="font-medium text-5xl text-white p-6">
             {selectedName}

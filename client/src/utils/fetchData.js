@@ -23,3 +23,20 @@ export const ticker_by_name = async (name) => {
     throw new Error("error fetching data in Fetch client side");
   }
 };
+
+export const ticker_by_date = async (selectedName, dateRange) => {
+  const { from, to } = dateRange;
+  const { stock } = selectedName;
+
+  console.log(stock, from, to);
+  try {
+    const data = await axios.get(
+      `http://localhost:4000/ticker/byDate/?n=${stock}&?range=${from}/${to}`
+    );
+    console.log("PERRITO", data.results);
+    return data;
+  } catch (error) {
+    console.log(error);
+    throw new Error("error fetching data in Fetch client side");
+  }
+};

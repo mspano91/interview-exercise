@@ -36,7 +36,7 @@ export default function AsideStocks() {
 
   return (
     <BackgroundGradient className="rounded-[22px] max-w-sm  sm:p-4 bg-white dark:bg-zinc-900">
-      <div className="w-full h-[700px] flex flex-col p-2 text-white text-center overflow-y-auto scrollbar-none  ">
+      <div className="w-full h-[800px] flex flex-col p-2 text-white text-center overflow-y-auto scrollbar-none  ">
         {stocksLimit.map((tick) => (
           <div className="flexgap-2">
             <div className="flex flex-row items-center gap-2 rounded-md hover:bg-[#359EA4]">
