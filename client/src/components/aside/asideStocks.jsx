@@ -9,6 +9,7 @@ import AddIcon from "@mui/icons-material/Add";
 
 export default function AsideStocks() {
   const dispatch = useDispatch();
+
   const allTickerRedux = useSelector((state) => state.fintech.allTickers);
   const stocksLimit = allTickerRedux.slice(0, 50);
   const selectedTickerRedux = useSelector((state) => state.fintech.selected);
