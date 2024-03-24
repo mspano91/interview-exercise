@@ -24,16 +24,16 @@ export default function InfoModal(props) {
     stockVolWeighted,
   } = props;
 
-  const formatTimestamp = (timestamp) => {
-    const date = new Date(timestamp);
-    return date.toLocaleString();
-  };
+  // const formatTimestamp = (timestamp) => {
+  //   const date = new Date(timestamp);
+  //   return date.toLocaleString();
+  // };
 
   return (
     <>
       <ArticleIcon
         onClick={onOpen}
-        className="text-white cursor-pointer hover:text-slate-800"
+        className="text-white cursor-pointer hover:text-slate-800 "
       />
       <Modal className="w-[400px]" isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>

@@ -5,8 +5,11 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { ticker_by_date } from "../../utils/fetchData";
+import { setSelected } from "../../redux/slice";
+import { useDispatch } from "react-redux";
 
 export default function StyledDatePicker(selectedName) {
+  const dispatch = useDispatch();
   const today = dayjs();
   const [fromDate, setFromDate] = React.useState(today);
   const [toDate, setToDate] = React.useState(today);
@@ -26,7 +29,7 @@ export default function StyledDatePicker(selectedName) {
     };
 
     const response = await ticker_by_date(selectedName, dateRange);
-    console.log(response.data.results);
+    dispatch(setSelected(response));
   };
 
   return (
