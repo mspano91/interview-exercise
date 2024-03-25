@@ -71,7 +71,7 @@ export default function StockChart() {
             series={getChartData().series}
             type="line"
             width={1200}
-            height={600}
+            height={400}
           />
         </BackgroundGradient>
       </div>

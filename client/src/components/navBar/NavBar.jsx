@@ -7,7 +7,7 @@ export default function NavBar() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-row justify-between items-center py-4 w-[1600px]">
+    <div className="flex flex-row justify-between items-center py-4 w-[1600px] ">
       <div
         onClick={() => navigate(`/`)}
         className="flex flex-row items-center cursor-pointer"

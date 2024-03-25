@@ -10,9 +10,9 @@ import { useDispatch } from "react-redux";
 
 export default function StyledDatePicker(selectedName) {
   const dispatch = useDispatch();
-  const today = dayjs();
-  const [fromDate, setFromDate] = React.useState(today);
-  const [toDate, setToDate] = React.useState(today);
+
+  const [fromDate, setFromDate] = React.useState(dayjs("2023-01-01"));
+  const [toDate, setToDate] = React.useState(dayjs("2023-01-12"));
 
   const handleToDateChange = (newValue) => {
     setToDate(newValue);
@@ -27,6 +27,9 @@ export default function StyledDatePicker(selectedName) {
       from: formatDate(fromDate),
       to: formatDate(toDate),
     };
+    alert(
+      "the api free serial alow just date range between january to december 2023"
+    );
 
     const response = await ticker_by_date(selectedName, dateRange);
     dispatch(setSelected(response));
@@ -34,20 +37,28 @@ export default function StyledDatePicker(selectedName) {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DemoContainer components={["DatePicker", "DatePicker"]}>
-        <DatePicker
-          label="From"
-          defaultValue={fromDate}
-          onChange={(newValue) => setFromDate(newValue)}
-        />
-        <DatePicker label="To" value={toDate} onChange={handleToDateChange} />
-        <button
-          className="rounded flex jusify-center items-center  border  p-2  hover:bg-[#359EA4]  cursor-pointer text-white hover:text-white "
-          onClick={handleSubmit}
-        >
-          Show range
-        </button>
-      </DemoContainer>
+      <div>
+        <DemoContainer components={["DatePicker", "DatePicker"]}>
+          <DatePicker
+            className="bg-slate-500 opacity-90 rounded-md"
+            label="From"
+            defaultValue={fromDate}
+            onChange={(newValue) => setFromDate(newValue)}
+          />
+          <DatePicker
+            className="bg-slate-500 opacity-90 rounded-md"
+            label="To"
+            value={toDate}
+            onChange={handleToDateChange}
+          />
+          <button
+            className="rounded flex jusify-center items-center  border  p-2  hover:bg-[#359EA4]  cursor-pointer text-white hover:text-white "
+            onClick={handleSubmit}
+          >
+            Show range
+          </button>
+        </DemoContainer>
+      </div>
     </LocalizationProvider>
   );
 }

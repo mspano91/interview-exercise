@@ -7,7 +7,7 @@ import User from "./views/user";
 
 function App() {
   return (
-    <div className="bg-zinc-900 w-full h-full flex flex-col justify-center items-center p-10">
+    <div className="bg-zinc-900 flex flex-col justify-center items-center p-12 scrollbar-thin  ">
       <NavBar onUserClick={() => setShowUser(true)} />
       <div>
         <Sections />

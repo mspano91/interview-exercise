@@ -4,6 +4,7 @@ const initialState = {
   allTickers: [],
   Allsearch: [],
   selected: [],
+  added: [],
   selectedName: "",
 };
 export const fintechSlice = createSlice({
@@ -22,11 +23,22 @@ export const fintechSlice = createSlice({
     setSelectedName: (state, action) => {
       state.selectedName = action.payload;
     },
+    SetAddedArray: (state, action) => {
+      state.added = [...state.added, ...action.payload];
+    },
+    SetDeletedStock: (state, action) => {
+      state.added = state.added.filter((item) => item.name !== action.payload);
+    },
   },
 });
 
-// Action creators are generated for each case reducer function
-export const { setAllTickers, setReset, setSelected, setSelectedName } =
-  fintechSlice.actions;
+export const {
+  setAllTickers,
+  setReset,
+  setSelected,
+  setSelectedName,
+  SetAddedArray,
+  SetDeletedStock,
+} = fintechSlice.actions;
 
 export default fintechSlice.reducer;
