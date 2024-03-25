@@ -11,12 +11,12 @@ export const allTickers = async () => {
 };
 
 export const ticker_by_name = async (name) => {
-  console.log(name);
+  // console.log(name);
   try {
     const data = await axios.get(
       `http://localhost:4000/ticker/byName/?n=${name}`
     );
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (error) {
     console.log(error);
@@ -28,14 +28,13 @@ export const ticker_by_date = async (selectedName, dateRange) => {
   const { from, to } = dateRange;
   const { stock } = selectedName;
 
-  console.log(stock, from, to);
+  // console.log(stock, from, to);
   try {
     const rangeToFetch = `${from}/${to}`;
-    console.log(rangeToFetch);
+    // console.log(rangeToFetch);
     const data = await axios.get(
       `http://localhost:4000/ticker/byDate/?n=${stock}&range=${rangeToFetch}`
     );
-    console.log("PERRITO", data.data);
     return data.data;
   } catch (error) {
     console.log(error);

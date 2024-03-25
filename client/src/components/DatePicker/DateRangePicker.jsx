@@ -41,13 +41,11 @@ export default function StyledDatePicker(selectedName) {
         <DemoContainer components={["DatePicker", "DatePicker"]}>
           <DatePicker
             className="bg-slate-500 opacity-90 rounded-md"
-            label="From"
             defaultValue={fromDate}
             onChange={(newValue) => setFromDate(newValue)}
           />
           <DatePicker
             className="bg-slate-500 opacity-90 rounded-md"
-            label="To"
             value={toDate}
             onChange={handleToDateChange}
           />

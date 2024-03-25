@@ -8,13 +8,19 @@ export default function Sections() {
           <p className="text-center text-md w-full font-medium">STOCKS</p>
         </div>
         <div className="rounded-lg flex jusify-center items-center  border-2 h-[50px] p-2 w-[400px] hover:bg-[#359EA4]  cursor-pointer text-white  hover:text-white">
-          <p className="text-center text-md w-full font-medium">CRYPTO</p>
+          <p className="line-through text-center text-md w-full font-medium">
+            CRYPTO
+          </p>
         </div>
         <div className="rounded-lg flex jusify-center items-center  border-2 h-[50px] p-2 w-[400px] hover:bg-[#359EA4]  cursor-pointer text-white hover:text-white ">
-          <p className="text-center text-md w-full font-medium">INDICE</p>
+          <p className="line-through text-center text-md w-full font-medium">
+            INDICE
+          </p>
         </div>
         <div className="rounded-lg flex jusify-center items-center  border-2 h-[50px] p-2 w-[400px] hover:bg-[#359EA4]  cursor-pointer text-white  hover:text-white">
-          <p className="text-center text-md w-full font-medium ">FOREX</p>
+          <p className="line-through text-center text-md w-full font-medium ">
+            FOREX
+          </p>
         </div>
       </div>
     </>

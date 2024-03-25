@@ -24,11 +24,6 @@ export default function InfoModal(props) {
     stockVolWeighted,
   } = props;
 
-  // const formatTimestamp = (timestamp) => {
-  //   const date = new Date(timestamp);
-  //   return date.toLocaleString();
-  // };
-
   return (
     <>
       <ArticleIcon
@@ -41,10 +36,6 @@ export default function InfoModal(props) {
             <>
               <ModalHeader className="flex  border-black flex-col gap-1">
                 <h1 className="text-3xl text-teal-600 py-4">{stockName}</h1>
-                {/* <div className="flex justify-right flex-row">
-                  <p className="pr-4">From: </p>
-                  {formatTimestamp(stockTimestamp)}
-                </div> */}
               </ModalHeader>
               <ModalBody>
                 <div className="flex flex-row">

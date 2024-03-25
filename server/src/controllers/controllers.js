@@ -37,7 +37,6 @@ const byDateController = async (name, range) => {
     const response = await axios.get(
       `${URL_byName}${name}/range/1/day/${range}?adjusted=true&sort=asc&limit=120&apiKey=${API_KEY}`
     );
-    console.log("PUTO", response);
     return response.data;
   } catch (error) {
     console.log(error);
